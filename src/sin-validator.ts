@@ -1,10 +1,12 @@
+// The time complexity for this function is O(n) since we need to iterate all the numbers provided at least once.
+
 // Using string as input type since JS will treat any number starting with 0 as octal
 export function sinValidator(sin: string): void {
     // Convert sin to array of numbers to handle each one across the function
     const sinArr: number[] = Array.from(sin, Number);
 
-    // Validate length
-    if (sinArr.length !== 9) {
+    // Validate length and digits
+    if (sinArr.length !== 9 ||isNaN(Number(sin))) {
         console.log('Please provide 9️⃣ digits');
         return;
     }
